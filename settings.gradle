@@ -1,0 +1,5 @@
+rootProject.name = 'photobook-dsl'
+
+include 'dsl'
+include 'renderer'
+include 'example'

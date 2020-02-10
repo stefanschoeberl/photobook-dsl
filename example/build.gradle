@@ -1,0 +1,30 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.11'
+    id 'application'
+}
+
+group 'dev.ssch.photobookdsl.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation project(':dsl')
+    implementation project(':renderer')
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+application {
+    mainClassName = 'dev.ssch.photobookdsl.example.PhotobookKt'
+}
+
+tasks.run.workingDir = rootProject.rootDir
